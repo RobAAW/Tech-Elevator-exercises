@@ -20,7 +20,6 @@ Thumbs.db
 *.ilk
 *.log
 *.dll
-!TechElevator*.dll
 *.lib
 *.sbr
 bin/
@@ -40,7 +39,7 @@ node_modules
 .settings
 target/
 
-### IntelliJ IDEA ###
+# IntelliJ
 .idea
 *.iws
 *.iml
@@ -70,9 +69,15 @@ yarn-error.log*
 *.sw*
 *.jfm
 
+# IntelliJ
+*.iml
 
 # Cypress e2e Testing
 cypress/screenshots
 cypress/videos
 /tests/e2e/videos/
 /tests/e2e/screenshots/
+
+
+#needed for week 5 .net
+!TechElevatorSqlRunner.dll
