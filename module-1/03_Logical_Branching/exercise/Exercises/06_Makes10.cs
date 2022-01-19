@@ -10,6 +10,11 @@
          */
         public bool Makes10(int a, int b)
         {
+            //true only if 10 or sum 10
+        if ((a == 10 || b == 10) || (a + b == 10))
+            {
+                return true;
+            }
             return false;
         }
 

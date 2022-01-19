@@ -12,7 +12,19 @@
          */
         public bool MonkeyTrouble(bool aSmile, bool bSmile)
         {
-            return false;
+            //trouble = smiling || not smiling          
+
+            if (aSmile && bSmile)
+            {
+                return true;
+            }
+            else if (!aSmile && !bSmile) 
+            {
+            return true;
+            }
+            {
+                return false;
+            }
         }
     }
 }

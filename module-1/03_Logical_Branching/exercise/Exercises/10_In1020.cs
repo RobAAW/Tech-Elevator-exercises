@@ -10,6 +10,11 @@
          */
         public bool In1020(int a, int b)
         {
+            //true if either between 10 and 20
+            if ((a > 10 && a < 20) || (b > 10 && b < 20))
+            {
+                return true;
+            }
             return false;
         }
     }
