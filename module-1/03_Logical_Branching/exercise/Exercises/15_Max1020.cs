@@ -9,9 +9,12 @@
          Max1020(19, 11) → 19
          Max1020(11, 9) → 11
          */
-        public int Max1020(int a, int b)
+        /*public int Max1020(int a, int b)*/
         {
-            return 0;
+            //return larger value between 10-20
+            //or
+            //return 0 if not
+            
         }
     }
 }

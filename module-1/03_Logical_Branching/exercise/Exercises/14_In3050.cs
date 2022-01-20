@@ -11,7 +11,18 @@
          */
         public bool In3050(int a, int b)
         {
-            return false;
+            //true if both between 30-40
+            //or both between 40-50
+            if (((a >= 30) && (a <= 40)) && ((b >= 30) && (b <= 40)))
+            {
+                return true;
+            }
+            else if (((a >= 40) && (a <= 50)) && ((b >= 40) && (b <= 50)))
+            {
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
