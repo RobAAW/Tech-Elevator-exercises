@@ -20,7 +20,7 @@
             {
                 return true;
             }
-            if ((cigars >= 40) && isWeekend == true)
+            else if ((cigars >= 40) && isWeekend == true)
             {
                 return true;
             }
