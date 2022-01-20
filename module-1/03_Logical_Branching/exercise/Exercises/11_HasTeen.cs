@@ -11,6 +11,12 @@
          */
         public bool HasTeen(int a, int b, int c)
         {
+            //teen between 13-19
+            //true if one or more is teen
+        if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19))
+            {
+                return true;
+            }
             return false;
         }
     }

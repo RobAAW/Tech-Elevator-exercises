@@ -7,9 +7,10 @@
             Change it so that it returns something other than a 0.5.
             TOPIC: Return Values
         */
+     
         public double ReturnNotHalf()
         {
-            return 0.5;
+            return 1.5;
         }
     }
 }

@@ -7,14 +7,13 @@
             Make sure it returns TRUE when one equals one.
             TOPIC: Boolean Expression & Conditional Logic
         */
-        public bool ReturnTrueWhenOneEqualsOne()
+        public bool ReturnTrueWhenOneEqualsOne(int number)
         {
-            if (1 == 1)
+            if (number > 5)
             {
-                return false;
+                return true;
             }
-
-            return false;
+            
         }
     }
 }

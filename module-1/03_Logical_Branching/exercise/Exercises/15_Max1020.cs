@@ -11,7 +11,21 @@
          */
         public int Max1020(int a, int b)
         {
-            return 0;
+            //return larger value between 10-20
+            //or
+            //return 0 if not
+            if ((a > b) && (a >= 10 && a <= 20))
+            {
+                return a;
+            }
+            if ((b > a) && (b >= 10 && b <= 20))
+            {
+                return b;
+            }
+            else if ((a < 10 && a > 20) && (b < 10 && b > 20))
+            {
+                return 0;
+            }
         }
     }
 }
