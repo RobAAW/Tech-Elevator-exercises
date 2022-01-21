@@ -11,7 +11,20 @@
          */
         public bool Old35(int n)
         {
-            return false;
+            //true if multiple/3 or /5, not both
+
+            if (n % 3 == 0 && n % 5 == 0)
+            {
+                return false;
+            }
+            else if (n % 3 == 0 || n % 5 == 0)
+            {
+                return true;
+            }
+            
+                return false;
+            
         }
+      
     }
 }

@@ -12,6 +12,27 @@
          */
         public bool SquirrelPlay(int temp, bool isSummer)
         {
+            //squirrels play if:
+            //between 60 and 90
+            //summer upper is 100
+            //
+
+            if (isSummer)
+            {
+                if (temp >=60 && temp <= 100)
+                {
+                    return true;
+                }
+                return false;
+            }
+            else if (!isSummer)
+            {
+                if (temp >= 60 && temp <=90)
+                {
+                    return true;
+                }
+                return false;
+            }
             return false;
         }
     }

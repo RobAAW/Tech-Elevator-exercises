@@ -12,6 +12,12 @@
          */
         public bool Less20(int n)
         {
+            //true if 1 or 2 less than multiple/20
+
+            if (n % 20 == 19 || n % 20 == 18)
+            {
+                return true;
+            }
             return false;
         }
     }

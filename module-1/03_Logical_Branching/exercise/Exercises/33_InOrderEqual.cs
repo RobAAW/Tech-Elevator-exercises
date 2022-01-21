@@ -12,6 +12,14 @@
          */
         public bool InOrderEqual(int a, int b, int c, bool equalOk)
         {
+            //true if in strict increasing order
+            //exception: if equalOk equality allowed
+
+            if (equalOk)
+            {
+
+            }
+
             return false;
         }
     }

@@ -12,8 +12,21 @@
          TeaParty(20, 6) → 2
          */
         public int TeaParty(int tea, int candy)
-        {
-            return 0;
+        { 
+            //0=bad 1=good 2=great
+            //Good = tea and candy are 5
+            //Great = tea or candy double teh other
+            //If tea or candy less than 5 = bad
+
+            if (tea < 5 || candy < 5)
+            {
+                return 0;
+            }
+            else if ((tea >= 2 * candy) || (candy >= 2 * tea))
+            {
+                return 2;
+            }
+            return 1;
         }
     }
 }

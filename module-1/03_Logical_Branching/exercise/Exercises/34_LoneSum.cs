@@ -11,7 +11,24 @@
          */
         public int LoneSum(int a, int b, int c)
         {
-            return 0;
+            //return sum a b c
+            //if one value is same as other, does not count
+
+            int sum = 0;
+
+            if (a != b && a != c)
+            {
+                sum += a;
+            }
+            else if (b != a && b != c)
+            {
+                sum += b;
+            }
+            else if (c != a && c != b)
+            {
+                sum += c;
+            }
+            return sum;
         }
     }
 }

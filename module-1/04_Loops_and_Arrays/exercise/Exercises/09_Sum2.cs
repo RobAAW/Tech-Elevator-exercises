@@ -11,7 +11,14 @@
          */
         public int Sum2(int[] nums)
         {
-            return 0;
+            for ()
+            {
+
+            }
+            {
+                for ()
+            }
+            return ;
         }
     }
 }

@@ -14,6 +14,7 @@
         {
             //true if in trouble
             //trouble before 7 and after 20
+
             if (talking && (hour < 7 || hour > 20))
             {
                 return true;

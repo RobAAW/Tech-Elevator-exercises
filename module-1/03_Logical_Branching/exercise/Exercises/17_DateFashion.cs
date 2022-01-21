@@ -19,16 +19,16 @@
             //date= dates 0-10
             //return 0 if no table, 1 if might, 2 if did
             //very stylish - 8 or more = 2
-            //
-            if ((you >= 8 && you > 2) || (date >=8 && date > 2))
-            {
-                return 2;
-            }
-            else if (you <= 2 || date <= 2)
+
+            if (you <= 2 || date <= 2)
             {
                 return 0;
             }
-            else
+            if (you >= 8 || date >= 8)
+            {
+                return 2;
+            }
+
             return 1;
         }
     }

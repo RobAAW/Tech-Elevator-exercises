@@ -14,18 +14,30 @@
             //return larger value between 10-20
             //or
             //return 0 if not
-            if ((a > b) && (a >= 10 && a <= 20))
-            {
-                return a;
-            }
-            if ((b > a) && (b >= 10 && b <= 20))
-            {
-                return b;
-            }
-            else if ((a < 10 && a > 20) && (b < 10 && b > 20))
+            
+
+            if ((a < 10 && a > 20) && (b <10 && b >20))
             {
                 return 0;
             }
+            if ((a >= 10 && a <= 20) && (b >= 10 && b <= 20))
+            {
+                if ()
+                {
+
+                }
+                if ((a > b) && (b < 10 && b > 20))
+                {
+                    return a;
+                }
+                if ((b > a) && (a < 10 && a > 20))
+                {
+                    return b;
+                }
+            }
+
+            return 0;
         }
+        
     }
 }

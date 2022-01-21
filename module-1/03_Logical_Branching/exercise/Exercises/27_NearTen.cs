@@ -11,6 +11,12 @@
          */
         public bool NearTen(int num)
         {
+            //true if num within 2 of *10
+            //
+            if (num % 10 <= 2 || num % 10 >= 8)
+            {
+                return true;
+            }
             return false;
         }
     }
