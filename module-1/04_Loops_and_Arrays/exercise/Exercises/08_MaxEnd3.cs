@@ -11,6 +11,10 @@
          */
         public int[] MaxEnd3(int[] nums)
         {
+            if ( )
+            {
+
+            }
             return new int[] { };
         }
     }

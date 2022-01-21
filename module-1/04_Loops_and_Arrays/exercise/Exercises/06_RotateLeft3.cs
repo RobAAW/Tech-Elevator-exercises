@@ -11,7 +11,15 @@
          */
         public int[] RotateLeft3(int[] nums)
         {
-            return new int[] { };
+            int num1 = nums[0];
+            int num2 = nums[1];
+            int num3 = nums[2];
+
+            nums[0] = num2;
+            nums[1] = num3;
+            nums[2] = num1;
+            return nums;
         }
+
     }
 }

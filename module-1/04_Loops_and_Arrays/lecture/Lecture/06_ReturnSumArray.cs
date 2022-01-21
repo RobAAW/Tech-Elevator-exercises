@@ -10,8 +10,15 @@
         {
             int[] arrayToLoopThrough = { 3, 4, 2, 9 };
 
+            int sum = 0;
 
-            return 0;
+            for (int i = 0; i < arrayToLoopThrough.Length; i++)
+            {
+                sum = sum + arrayToLoopThrough[i];
+            }
+
+
+            return sum;
         }
     }
 }

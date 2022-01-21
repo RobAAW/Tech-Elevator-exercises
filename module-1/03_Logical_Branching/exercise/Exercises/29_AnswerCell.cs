@@ -11,7 +11,27 @@
          */
         public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
         {
-            return false;
+            //true if cell rings
+            //only answer am if mom calls
+            //if asleep do not answer
+
+            if (isAsleep)
+            {
+                return false;
+            }
+            else if (isMorning)
+            {
+                if (isMom)
+                {
+                    return true;
+                }
+                return false;
+            }
+            if (!isMorning)
+            {
+                return true;
+            }
+            return true;
         }
     }
 }

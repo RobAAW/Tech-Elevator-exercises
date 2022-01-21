@@ -16,6 +16,7 @@
             //party success = cigars 40-60
             //except weekend - no limit
             //true if party with these values is success = false otherwise
+
             if ((cigars >= 40 && cigars <=60) && isWeekend == false)
             {
                 return true;

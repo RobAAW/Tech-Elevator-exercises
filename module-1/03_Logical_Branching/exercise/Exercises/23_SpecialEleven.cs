@@ -12,6 +12,16 @@
          */
         public bool SpecialEleven(int n)
         {
+            //special if multiple of 11
+            //or
+            //one more than multiple of 11
+            //return true if so
+
+            if (n % 11 == 0 || n % 11 == 1)
+            {
+                return true;
+            }
+
             return false;
         }
     }
