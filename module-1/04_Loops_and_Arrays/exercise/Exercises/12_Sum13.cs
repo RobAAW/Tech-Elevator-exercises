@@ -22,32 +22,29 @@
                 return 0;
             }
             // need a running sum total
+            int sum = 0;
 
-            int sum = 0; 
 
-            if (nums[0] != 13)
-            {
-                sum += nums[i];
-            }
             // add next value unless 13
             //anything 1 index after 13 does not count
             //inspect/look at each element of nums
 
-            for (int i = 0; i < nums.Length -1; i++)
+            for (int i = 0; i < nums.Length; i++)
             {
-                if (i > 0 && nums[i] != 13 && nums[i - 1] != 13)
+                if (i == 0 && nums[0] != 13)
                 {
                     sum += nums[i];
                 }
+
+                //if it is 13 ignore
+                //if not true add next value to the running total
+                if (i > 0 && nums[i] != 13 && nums[i -1] != 13)
+                {
+                    sum += nums[i];
+                }
+                //add the next value to it
+                //increment the counter
             }
-            //if it is 13 ignore
-            //if not true add next value to the running total
-            //add the next value to it
-            //increment the counter
-
-
-
-
             return sum;
         }
     }
