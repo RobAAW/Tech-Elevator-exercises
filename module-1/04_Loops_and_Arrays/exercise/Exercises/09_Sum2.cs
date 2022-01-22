@@ -9,30 +9,22 @@
          Sum2([1, 1]) → 2
          Sum2([1, 1, 1, 1]) → 2
          */
-        public int[] Sum2(int[] nums)
+        public int Sum2(int[] nums)
         {
             int sum = 0;
 
-            if (nums.Length > 2)
+            if (nums.Length >= 2)
             {
                 sum = nums[0] + nums[1];
+                return sum;
             }
-
-            for (int i = 0; i < nums[nums.Length]; i++)
+            else if (nums.Length == 1)
             {
-                if (nums.Length == 0)
-                {
-                    sum = 0;
-                }
-                else if (nums.Length < 2)
-                {
-                    sum = nums[0] + nums[1];
-                }
+                sum = nums[0];
+                return sum;
             }
 
-            
-
-            return nums;
+            return 0;
         }
         
     }
