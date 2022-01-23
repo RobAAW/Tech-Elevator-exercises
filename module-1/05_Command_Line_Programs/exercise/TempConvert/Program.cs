@@ -24,27 +24,27 @@ namespace TempConvert
             char userF = 'F';
             char userC = 'C';
             double newTemp = 0;
-            char newFormat = 'n';
+            char newFormat = '0';
 
-            bool fahrenheit = true;
-            bool celsius = true;
+            //bool fahrenheit = true;
+            //bool celsius = true;
 
-            if (fahrenheit)
+            if (format == 'F')
             {
                 newFormat = userC;
             }
-            if (celsius)
+            if (format == 'C')
             {
                 newFormat = userF;
             }
-
+            
             if (format == userF)
             {
-                newTemp = (temp - 32) / 1.8;
+                newTemp = (int)((temp - 32) / 1.8);
             }
             else if (format == userC)
             {
-                newTemp = temp * 1.8 + 32; 
+                newTemp = (int)(temp * 1.8 + 32); 
             }
 
 
