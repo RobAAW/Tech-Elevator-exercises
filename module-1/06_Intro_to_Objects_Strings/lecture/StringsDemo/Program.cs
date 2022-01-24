@@ -15,18 +15,27 @@ namespace StringsDemo
             //      of name.
             // Output: A
             // Output: e
+            char firstCharacter = name[0];
+            char lastCharacter = name[name.Length - 1];
+            //string interpolation = $
+            Console.WriteLine($"first and last character: {firstCharacter} & {lastCharacter}");
+            //string concatenation
+            Console.WriteLine("first and last character: " + firstCharacter + "&" + lastCharacter);
+
 
             // Console.WriteLine("First and Last Character. ");
 
             // 2. How do we write code that prints out the first three characters
             // Output: Ada
+            string firstThreeCharacters = name.Substring(0, 3);
 
-            // Console.WriteLine("First 3 characters: ");
+            Console.WriteLine("First 3 characters: " + firstThreeCharacters);
 
             // 3. Now print out the first three and the last three characters
             // Output: Adaace
+            string lastThreeCharacters = name.Substring(name.Length - 3);
 
-            // Console.WriteLine("Last 3 characters: ");
+            Console.WriteLine("Last 3 characters: " + lastThreeCharacters);
 
             // 4. What about the last word?
             // Output: Lovelace

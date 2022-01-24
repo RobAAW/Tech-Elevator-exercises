@@ -12,7 +12,13 @@
         */
         public string MakeTags(string tag, string word)
         {
-            return null;
+
+            string hTag = $"<{tag}>{word}</{tag}>";
+
+            return hTag;
+
+            
+           
         }
     }
 }

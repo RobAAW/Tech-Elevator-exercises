@@ -11,7 +11,14 @@
         */
         public string NonStart(string a, string b)
         {
-            return null;
+
+            string conCat = a.Substring(1) + b.Substring(1);
+
+
+            return conCat;
+
+
+            //return null;
         }
     }
 }

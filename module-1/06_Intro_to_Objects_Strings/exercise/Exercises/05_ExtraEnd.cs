@@ -11,7 +11,13 @@
         */
         public string ExtraEnd(string str)
         {
-            return null;
+
+            string copyThree = str.Substring(str.Length - 2);
+
+
+            return copyThree + copyThree + copyThree;
+
+            
         }
     }
 }

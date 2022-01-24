@@ -11,7 +11,17 @@
         */
         public string Left2(string str)
         {
-            return null;
+
+           if (str.Length <= 2)
+            {
+                return str;
+            }
+
+            string noFirst2 = str.Substring(2);
+            string rotate2Left = str.Substring(0, 2);
+            return noFirst2 + rotate2Left;
+
+            //return null;
         }
     }
 }
