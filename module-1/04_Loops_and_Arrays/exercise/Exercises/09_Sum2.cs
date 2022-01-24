@@ -11,12 +11,21 @@
          */
         public int Sum2(int[] nums)
         {
-            
-                
-            
-            
+            int sum = 0;
+
+            if (nums.Length >= 2)
+            {
+                sum = nums[0] + nums[1];
+                return sum;
+            }
+            else if (nums.Length == 1)
+            {
+                sum = nums[0];
+                return sum;
+            }
+
+            return 0;
         }
-        return 0;    
+        
     }
-    
 }
