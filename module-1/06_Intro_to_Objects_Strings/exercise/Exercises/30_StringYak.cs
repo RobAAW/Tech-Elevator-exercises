@@ -11,7 +11,18 @@
         */
         public string StringYak(string str)
         {
-            return null;
+
+            string noYak = "";
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[1] == 'y' && str[i + 1] == 'a' && str[i + 2] == 'k')
+                {
+                    noYak = str.Remove(i, 3);
+                }
+            }
+                return noYak;
+      
         }
     }
 }
