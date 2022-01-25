@@ -10,7 +10,25 @@
         */
         public int CountXX(string str)
         {
-            return 0;
+
+            int totalX = 0;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str.Contains("xxxx"))
+                {
+                    totalX += 3;
+                }
+                if (str.Contains("xxx"))
+                {
+                    totalX += 2;
+                }
+                if (str.Contains("xxxx"))
+                {
+                    totalX += 3;
+                }
+            }
+            return totalX;
         }
     }
 }

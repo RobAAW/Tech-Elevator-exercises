@@ -19,17 +19,15 @@
 
             string threeChars = str.Substring(0, 3);
             string copies = "";
+            
 
-            for (int i = 0; i < str.Length; i = n)
+            for (int i = 0; i < n; i++)
             {
                 copies += threeChars;
             }
 
             return copies;
-
-
-
-            
+  
         }
 
     }
