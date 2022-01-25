@@ -11,16 +11,24 @@
         */
         public string StringX(string str)
         {
-            /*string lessX = "";
             
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (i > 0 && i < str.Length)
+
+                string noX = "";
+
+                for (int i = 0; i < str.Length; i++)
                 {
-                    lessX = str.Replace("x", "");
+                    if ((str.Substring(i, 1) == "x") && (i != 0) && (i != str.Length - 1))
+                    {
+                        continue;
+                    }
+
+                    noX = noX + str.Substring(i, 1);
+
                 }
-                return lessX;*/
-            return str;
+
+                return noX;
+
+            
         }
 
         

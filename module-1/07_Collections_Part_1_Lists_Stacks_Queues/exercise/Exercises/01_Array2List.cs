@@ -16,9 +16,14 @@ namespace Exercises
             List<string> listFromArray = new List<string>();
             
 
-            for (int i = 0; i < stringArray.Length; i++)
+            /*for (int i = 0; i < stringArray.Length; i++)
             {
                 listFromArray.Add(stringArray[i]);
+            }*/
+
+            foreach(string singleString in stringArray)
+            {
+                listFromArray.Add(singleString);
             }
             return listFromArray;
         }
