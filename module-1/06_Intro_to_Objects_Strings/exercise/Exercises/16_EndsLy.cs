@@ -10,6 +10,20 @@
         */
         public bool EndsLy(string str)
         {
+
+            if (str.Length < 2)
+            {
+                return false;
+            }
+            
+            string endInLY = str.Substring(str.Length - 2);
+
+            if (endInLY == "ly")
+            {
+                return true;
+            }
+
+            
             return false;
         }
     }

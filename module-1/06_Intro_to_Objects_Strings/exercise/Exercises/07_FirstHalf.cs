@@ -10,7 +10,13 @@
         */
         public string FirstHalf(string str)
         {
-            return null;
+            int half = 0;
+
+            half = str.Length / 2;
+
+            return str.Substring(0, half);
+
+            //return null;
         }
     }
 }

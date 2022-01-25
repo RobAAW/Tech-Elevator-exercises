@@ -11,7 +11,9 @@
         */
         public string WithoutEnd(string str)
         {
-            return null;
+
+            string withOut = str.Substring(1, str.Length - 2); 
+            return withOut;
         }
     }
 }
