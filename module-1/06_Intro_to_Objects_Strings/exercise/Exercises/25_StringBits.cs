@@ -11,13 +11,13 @@
         public string StringBits(string str)
         {
 
-            string otherChar = "";
+            string everyOther = "";
 
-            for (int i = 0; i < str.Length; i = 2)
+            for (int i = 0; i < str.Length; i = i+2)
             {
-                otherChar += str[i];
+                everyOther += str[i];
             }
-            return otherChar;
+            return everyOther;
         }
     }
 }

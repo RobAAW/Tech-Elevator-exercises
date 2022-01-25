@@ -13,20 +13,13 @@
 
             int totalX = 0;
 
-            for (int i = 0; i < str.Length; i++)
+            for (int i = 0; i < str.Length - 1; i++)
             {
-                if (str.Contains("xxxx"))
+                if (str.Substring(i, 2) == "xx")
                 {
-                    totalX += 3;
+                    totalX++;
                 }
-                if (str.Contains("xxx"))
-                {
-                    totalX += 2;
-                }
-                if (str.Contains("xxxx"))
-                {
-                    totalX += 3;
-                }
+                
             }
             return totalX;
         }

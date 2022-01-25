@@ -11,17 +11,19 @@
         public bool DoubleX(string str)
         {
 
-            int firstX = str.IndexOf("x");
 
-
-            for (int i = firstX; i < str.Length; i++)
+            /*for (int i = 0; i > str.IndexOf("x"); i++)
             {
-                if (str[i] == 'x' && str[i +1] == 'x')
+                if (i == 'x')
                 {
                     return true;
                 }
-            }  
-            return false;
+            }*/
+
+            int index = str.IndexOf("x");
+
+            return (index >= 0 && index == str.IndexOf("xx", index));
+
         }
     }
 }

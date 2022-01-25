@@ -11,7 +11,19 @@
         */
         public string StringX(string str)
         {
-            return null;
+            /*string lessX = "";
+            
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (i > 0 && i < str.Length)
+                {
+                    lessX = str.Replace("x", "");
+                }
+                return lessX;*/
+            return str;
         }
+
+        
+        
     }
 }

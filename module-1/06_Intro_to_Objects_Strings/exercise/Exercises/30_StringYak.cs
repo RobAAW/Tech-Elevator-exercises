@@ -12,7 +12,9 @@
         public string StringYak(string str)
         {
 
-            
+            string lessYak = str.Replace("yak", ""); 
+         
+         return lessYak;
       
         }
     }
