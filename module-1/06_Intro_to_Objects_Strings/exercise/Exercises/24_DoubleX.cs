@@ -12,14 +12,6 @@
         {
 
 
-            /*for (int i = 0; i > str.IndexOf("x"); i++)
-            {
-                if (i == 'x')
-                {
-                    return true;
-                }
-            }*/
-
             int index = str.IndexOf("x");
 
             return (index >= 0 && index == str.IndexOf("xx", index));
