@@ -10,7 +10,19 @@
         */
         public string StringSplosion(string str)
         {
-            return null;
+            
+        
+
+            string jibberish = "";
+
+                        
+            for (int i = 1; i < str.Length + 1; i++)
+            {
+                jibberish = jibberish + str.Substring(0, i);
+            }
+            
+            return jibberish;
         }
+        
     }
 }

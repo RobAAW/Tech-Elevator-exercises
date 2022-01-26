@@ -11,7 +11,27 @@
         */
         public string StringX(string str)
         {
-            return null;
+            
+
+                string noX = "";
+
+                for (int i = 0; i < str.Length; i++)
+                {
+                    if ((str.Substring(i, 1) == "x") && (i != 0) && (i != str.Length - 1))
+                    {
+                        continue;
+                    }
+
+                    noX = noX + str.Substring(i, 1);
+
+                }
+
+                return noX;
+
+            
         }
+
+        
+        
     }
 }
