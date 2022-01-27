@@ -18,6 +18,13 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
+
+            if (words.Length > 0)
+            {
+
+            }
+
+
             return null;
         }
     }

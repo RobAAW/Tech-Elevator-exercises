@@ -14,7 +14,12 @@ namespace Exercises
          */
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
-            return null;
+
+            Dictionary<string, string> diffString = new Dictionary<string, string>();
+
+            
+
+            return diffString;
         }
     }
 }
