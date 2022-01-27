@@ -40,40 +40,7 @@ namespace Exercises
                     intToStrings.Add(integerArray[i].ToString());
             }
 
-            /*string f = "";
-            string fizz = "Fizz";
-            string b = "";
-            string buzz = "Buzz";
-            string fb = "";
-            string fizzBuzz = "FizzBuzz";
-
-            foreach (int numToInt in integerArray)
-            {
-                if (!(numToInt % 3 == 0 || !(numToInt % 5 == 0))
-                {
-                    intToStrings.Add(numToInt.ToString());
-                }
-                if (numToInt % 3 == 0)
-                {
-                    f = numToInt.ToString();
-                    f = fizz;
-                    intToStrings.Add(f);
-                }
-                else if (numToInt % 5 == 0)
-                {
-                    b = numToInt.ToString();
-                    b = buzz;
-                    intToStrings.Add(b);
-                }
-                else if (numToInt % 3 == 0 && numToInt % 5 == 0)
-                {
-                    fb = numToInt.ToString();
-                    fb = fizzBuzz;
-                    intToStrings.Add(fb);
-                }
-                
-            }*/
-
+ 
             return intToStrings;
 
         }
