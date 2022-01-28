@@ -15,7 +15,23 @@ namespace Exercises
          */
         public Dictionary<string, bool> WordMultiple(string[] words)
         {
-            return null;
+
+            Dictionary<string, bool> countTrue = new Dictionary<string, bool>();
+
+            foreach (string i in words)
+            {
+                if (countTrue.ContainsKey(i))
+                {
+                    countTrue[i] = true;
+                }
+                else
+                {
+                    countTrue[i] = false;
+                }
+            }
+
+
+            return countTrue;
         }
     }
 }

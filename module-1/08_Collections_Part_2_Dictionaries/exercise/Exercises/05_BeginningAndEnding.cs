@@ -17,7 +17,19 @@ namespace Exercises
 
             Dictionary<string, string> diffString = new Dictionary<string, string>();
 
-            
+
+
+
+            string indexFirstLetter = "";
+            string indexLastLetter = "";
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                string word = words[i];
+                indexFirstLetter = word.Substring(0, 1);
+                indexLastLetter = word.Substring(word.Length - 1);
+                diffString[indexFirstLetter] = indexLastLetter;
+            }
 
             return diffString;
         }

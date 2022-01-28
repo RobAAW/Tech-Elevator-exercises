@@ -2,7 +2,7 @@
 {
     public class HomeworkAssignment
     {
-
+        public int EarnedMarks { get; set; }
 
     }
 }

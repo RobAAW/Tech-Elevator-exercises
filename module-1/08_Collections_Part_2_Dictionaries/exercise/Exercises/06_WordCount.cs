@@ -19,13 +19,25 @@ namespace Exercises
         public Dictionary<string, int> WordCount(string[] words)
         {
 
-            if (words.Length > 0)
+            Dictionary<string, int> keyNumber = new Dictionary<string, int>();
+
+            
+            
+            for (int i = 0; i < words.Length; i++)
             {
-
+                if (keyNumber.ContainsKey(words[i]))
+                {
+                    keyNumber[words[i]] += 1;
+                }
+                else 
+                {
+                    keyNumber[words[i]] = 1;
+                }
+                
             }
-
-
-            return null;
+            
+      
+            return keyNumber;
         }
     }
 }
