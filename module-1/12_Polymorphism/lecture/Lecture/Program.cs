@@ -1,5 +1,6 @@
 ﻿using Lecture.Farming;
 using System;
+using System.Collections.Generic;
 
 namespace Lecture
 {
@@ -10,9 +11,17 @@ namespace Lecture
             //
             // OLD MACDONALD
             //
-            FarmAnimal[] animals = new FarmAnimal[] { new Cow(), new Chicken() };
+            //FarmAnimal[] animals = new FarmAnimal[] { new Cow(), new Chicken() };
 
-            foreach (FarmAnimal animal in animals)
+            List<ISingable> animals = new List<ISingable>();
+            animals.Add(new Cow(250));
+            animals.Add(new Chicken());
+
+            Tractor myTractor = new Tractor("Plowy McPlowface", "Vroooom diesel noise");
+            animals.Add(myTractor);
+            
+
+            foreach (ISingable animal in animals)
             {
                 Console.WriteLine("Old MacDonald had a farm, ee ay ee ay oh!");
                 Console.WriteLine("And on his farm he had a " + animal.Name + ", ee ay ee ay oh!");
