@@ -42,14 +42,25 @@ namespace InheritanceLecture.Auctioneering
             Console.WriteLine(offeredBid.Bidder + " bid " + offeredBid.BidAmount.ToString("C"));
 
             // Record it as a bid by adding it to allBids
+            allBids.Add(offeredBid);
+
+            //bool isCurrentWinningBid = false;
 
             // Check to see IF the offered bid is higher than the current bid amount
+            if (offeredBid.BidAmount > CurrentHighBid.BidAmount)
+            {
                 // if yes, set offered bid as the current high bid
+                CurrentHighBid = offeredBid;
+                //isCurrentWinningBid = true;
+            }
 
             // Output the current high bid
+            Console.WriteLine("Current high bid is " + CurrentHighBid.Bidder + " for $" + CurrentHighBid.BidAmount.ToString("C"));
 
             // Return if this is the new highest bid
-            return false;
+            return CurrentHighBid == offeredBid;
+            //or
+
         }
     }
 }
