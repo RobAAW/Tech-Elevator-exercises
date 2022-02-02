@@ -3,7 +3,7 @@ namespace Lecture.Farming
     /// <summary>
     /// A base farm animal class.
     /// </summary>
-    public class FarmAnimal
+    public class FarmAnimal : ISingable
     {
         /// <summary>
         /// The farm animal's name.
@@ -24,6 +24,11 @@ namespace Lecture.Farming
         {
             Name = name;
             Sound = sound;
+        }
+
+        public void Tune()
+        {
+
         }
     }
 }

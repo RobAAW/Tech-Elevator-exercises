@@ -12,13 +12,19 @@
         public override decimal Withdraw(decimal amountToWithdraw)
         {
 
+
+            decimal serviceCharge = 2;
+
             if (amountToWithdraw > base.Balance)
             {
-                if (base.Balance < 150 && base.Balance > 1)
-                {
-                    base.Withdraw(2);
-                }
                 base.Withdraw(0);
+            }
+            else
+                base.Withdraw(amountToWithdraw);
+
+            if (base.Balance < 150 && base.Balance > 1)
+            {
+                base.Withdraw(serviceCharge);
             }
             return Balance;
 
