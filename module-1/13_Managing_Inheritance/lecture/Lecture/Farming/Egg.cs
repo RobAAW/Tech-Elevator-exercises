@@ -9,6 +9,7 @@
         {
             Name = "Egg";
             Price = (decimal)0.25;
+            //Price = 0.25M;
         }
     }
 }
