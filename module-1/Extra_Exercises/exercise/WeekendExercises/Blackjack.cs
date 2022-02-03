@@ -11,15 +11,29 @@
         */
         public int Blackjack(int a, int b)
         {
-            if (a > 21 && b > 21)
+            int differenceA = 21 - a;
+            int differenceB = 21 - b;
+
+            bool below21A = a <= 21;
+            bool below21B = b <= 21;
+
+            if (!below21A && !below21B)
             {
                 return 0;
             }
-            if (true)
+            else if (below21A && !below21B)
             {
-
+                return a;
             }
-
+            else if (below21B && !below21A)
+            {
+                return b;
+            }
+            else if (below21A && below21B && (differenceA < differenceB))
+            {
+                return a;
+            }
+            
             return b;
         }
     }

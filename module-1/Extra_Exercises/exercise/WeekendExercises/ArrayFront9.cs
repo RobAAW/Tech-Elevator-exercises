@@ -10,7 +10,27 @@
         */
         public bool ArrayFront9(int[] nums)
         {
-            
+
+            if (nums.Length < 4)
+            {
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    if (nums[i] == 9)
+                    {
+                        return true;
+                    }
+                }
+            }
+            else if (nums.Length >= 4)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    if (nums[i] == 9)
+                    {
+                        return true;
+                    }
+                }
+            }
             return false;
         }
     }
