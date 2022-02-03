@@ -10,7 +10,19 @@
         */
         public int ArrayCount9(int[] nums)
         {
-            return 0;
+
+            int count = 0;
+            
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 9)
+                {
+                    count += 1;
+                }
+            }
+
+
+            return count;
         }
     }
 }

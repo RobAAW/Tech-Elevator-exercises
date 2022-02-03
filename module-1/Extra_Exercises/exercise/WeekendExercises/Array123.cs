@@ -10,6 +10,14 @@
         */
         public bool Array123(int[] nums)
         {
+
+            for (int i = 1; i < nums.Length - 1; i++)
+            {
+                if (nums[i-1] == 1 && nums[i] == 2 && nums[i+1] == 3)
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }

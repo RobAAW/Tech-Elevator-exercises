@@ -3,7 +3,7 @@ namespace Lecture.Farming
     /// <summary>
     /// A base farm animal class.
     /// </summary>
-    public class FarmAnimal : ISingable
+    public abstract class FarmAnimal : ISingable
     {
         /// <summary>
         /// The farm animal's name.
@@ -14,7 +14,10 @@ namespace Lecture.Farming
         /// <summary>
         /// The farm animal's sound.
         /// </summary>
-        public string Sound
+
+        private bool isSleeping { get; set; } = false;
+
+        public virtual string Sound
         {
             get
             {
@@ -35,6 +38,18 @@ namespace Lecture.Farming
         {
             Name = name;
             Sound = sound;
+        }
+
+        public abstract string Eat();
+
+        public void Sleep()
+        {
+            isSleeping = true;
+        }
+
+        public void WakeUp()
+        {
+            isSleeping = false;
         }
     }
 }
