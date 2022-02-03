@@ -11,7 +11,27 @@
         */
         public int[] BiggerTwo(int[] a, int[] b)
         {
-            return new int[] { };
+            int sumA = 0;
+            int sumB = 0;
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] += sumA;
+            }
+            for (int i = 0; i < b.Length; i++)
+            {
+                b[i] += sumB;
+            }
+            if (sumA == sumB)
+            {
+                return new int[] {a[0], a[1]};
+            }
+            else if (sumB > sumA)
+            {
+                return new int[] { b[0], b[1] };
+            }
+            else
+            return new int[] { a[0], a[1] };
         }
     }
 }

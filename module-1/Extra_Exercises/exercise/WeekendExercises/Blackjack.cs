@@ -11,7 +11,16 @@
         */
         public int Blackjack(int a, int b)
         {
-            return 0;
+            if (a > 21 && b > 21)
+            {
+                return 0;
+            }
+            if (true)
+            {
+
+            }
+
+            return b;
         }
     }
 }
