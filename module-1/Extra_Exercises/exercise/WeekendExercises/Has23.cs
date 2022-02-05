@@ -10,6 +10,17 @@
         */
         public bool Has23(int[] nums)
         {
+
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 2 || nums[i] == 3)
+                {
+                    return true;
+                }
+            }
+
+
             return false;
         }
     }

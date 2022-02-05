@@ -13,7 +13,16 @@
         */
         public int[] FizzArray(int n)
         {
-            return new int[] { };
+            int[] nLength = new int[n];
+            nLength[0] = 0;
+            int increment = 0;
+
+            for (int i = 1; i < n - 1; i++)
+            {
+                increment += 1;
+                nLength[i] = increment;
+            }
+            return nLength;
         }
     }
 }

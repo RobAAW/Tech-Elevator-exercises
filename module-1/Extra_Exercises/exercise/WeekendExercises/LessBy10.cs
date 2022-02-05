@@ -10,6 +10,24 @@
         */
         public bool LessBy10(int a, int b, int c)
         {
+            int[] testABC = new int[3] { a, b, c };
+
+            for (int i = 0; i < 3; i++)
+            {
+                int j = i + 1;
+                int k = i + 2;
+                int l = i - 1;
+                if (i > j  || i > k)
+                {
+                    return true;
+                }
+                else if (true)
+                {
+
+                }
+            }
+
+
             return false;
         }
     }
