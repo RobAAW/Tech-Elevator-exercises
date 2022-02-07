@@ -11,7 +11,13 @@
         */
         public int[] MakeEnds(int[] nums)
         {
-            return new int[] { };
+            int[] firstLast = new int[2];
+
+            firstLast[0] = nums[0];
+            firstLast[firstLast.Length - 1] = nums[nums.Length - 1];
+
+
+            return firstLast;
         }
     }
 }
