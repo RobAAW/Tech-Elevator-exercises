@@ -15,7 +15,15 @@ namespace TestableClasses.Classes.Tests
         //.IsNotNull()
         //.IsNull()
 
+        [TestMethod]
+        public void MakeAbbaTest()
+        {
+            StringExercises stringExercises = new StringExercises();
 
+            string actual = stringExercises.MakeAbba("Hi", "Bye");
+            string expected = "HiByeByeHi";
+            Assert.AreEqual(expected, actual, "Result string was not as expected");
+        }
 
     }
 }

@@ -12,7 +12,20 @@
         */
         public int GreenTicket(int a, int b, int c)
         {
-            return 0;
+            //all different = 0
+            //all same = 20
+            //2 same = 10
+
+            if (a == b &&  b ==c)
+            {
+                return 20;
+            }
+            else if (a == b || b == c || a == c)
+            {
+                return 10;
+            }
+
+                return 0;
         }
     }
 }

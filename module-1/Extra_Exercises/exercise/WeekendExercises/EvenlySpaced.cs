@@ -11,6 +11,8 @@
         */
         public bool EvenlySpaced(int a, int b, int c)
         {
+            
+
             return false;
         }
     }

@@ -12,7 +12,41 @@
         */
         public int[] FizzArray3(int start, int end)
         {
-            return new int[] { };
+            //return new array
+            //int for start
+            //int for end is non-inclusive
+
+
+
+            int[] startEnd = new int[] { };
+            
+            
+
+            for (int i = 0; i < end - 1; i++)
+            {
+                if (end == 0)
+                {
+                    startEnd[0] = 0;
+                    break;
+                }
+                else
+
+                startEnd[0] = start;
+                int j = i + 1;
+                startEnd[i] = j;
+                if (i > end)
+                {
+                    break;
+                }
+
+                    
+
+
+
+            }
+             
+            return startEnd;
         }
     }
 }
+

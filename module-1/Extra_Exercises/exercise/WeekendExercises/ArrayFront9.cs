@@ -21,18 +21,16 @@
                     }
                 }
             }
-            else if (nums.Length > 4)
+            else if (nums.Length >= 4)
             {
-                for (int i = 0; i < nums[3]; i++)
+                for (int i = 0; i < 3; i++)
                 {
-                    if (nums[0] == 9)
+                    if (nums[i] == 9)
                     {
                         return true;
                     }
                 }
             }
-            
-
             return false;
         }
     }
