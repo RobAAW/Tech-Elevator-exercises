@@ -11,7 +11,21 @@
         */
         public int[] SwapEnds(int[] nums)
         {
-            return new int[] { };
+            int[] swapIt = new int[] { };
+
+            nums.CopyTo(swapIt, 0);
+
+            if (nums.Length == 1)
+            {
+                return swapIt;
+            }
+            else
+            
+            swapIt[0] = nums[nums.Length - 1];
+            swapIt[swapIt.Length - 1] = nums[0];
+
+
+            return swapIt;
         }
     }
 }

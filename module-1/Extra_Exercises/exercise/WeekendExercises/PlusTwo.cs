@@ -10,7 +10,12 @@
         */
         public int[] PlusTwo(int[] a, int[] b)
         {
-            return new int[] { };
+            int[] allFour = new int[4];
+
+            a.CopyTo(allFour, 0);
+            b.CopyTo(allFour, 2);
+
+            return allFour;
         }
     }
 }

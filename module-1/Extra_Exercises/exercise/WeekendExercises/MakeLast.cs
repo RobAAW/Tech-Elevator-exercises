@@ -12,7 +12,14 @@
         */
         public int[] MakeLast(int[] nums)
         {
-            return new int[] { };
+        
+            int newLength = nums.Length * 2;
+
+            int[] doubleLength = new int[newLength];
+
+            doubleLength[doubleLength.Length - 1] = nums[nums.Length - 1];
+
+            return doubleLength;
         }
     }
 }

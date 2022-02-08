@@ -11,7 +11,24 @@
         */
         public bool NoTriples(int[] nums)
         {
-            return false;
+            int appearance = 0;
+            int appearanceCount = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                appearance = nums[i];
+
+                if (nums[i] / appearance == 1)
+                {
+                    appearanceCount++;
+                }
+            }
+            if (appearanceCount >= 3)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

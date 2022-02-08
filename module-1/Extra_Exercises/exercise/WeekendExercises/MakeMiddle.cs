@@ -11,7 +11,17 @@
         */
         public int[] MakeMiddle(int[] nums)
         {
-            return new int[] { };
+            int[] middleElements = new int[2];
+
+            int arrayOne = nums.Length / 2 - 1;
+            int arrayTwo = nums.Length / 2;
+
+            middleElements[0] = nums[arrayOne];
+            middleElements[1] = nums[arrayTwo];
+
+
+
+            return middleElements;
         }
     }
 }
