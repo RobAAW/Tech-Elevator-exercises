@@ -5,6 +5,8 @@ namespace Tutorial
 {
     class Program
     {
+
+        //  data/sherlock-holmes.txt
         static void Main(string[] args)
         {
             // Prompt the user for a file path - path should look like "data/jekyll-and-hyde.txt"
@@ -19,9 +21,12 @@ namespace Tutorial
             /*
             Step 2: Open a file for writing the converted text into it
             */
+            string convertedPath = getConvertedPath(filePath);
+
             try
             {
                 using (StreamReader fileInput = new StreamReader(filePath))
+                using (StreamWriter writer = new StreamWriter(convertedPath))
                 {
                     // Loop until the end of file is reached
                     while (!fileInput.EndOfStream)
@@ -30,8 +35,9 @@ namespace Tutorial
                         string lineOfText = fileInput.ReadLine();
                         lineCount++;
 
-                        // Write the text to the console.
-                        Console.WriteLine(lineOfText);
+                        // Write the text to the console. 1strun
+                        // Write the text in uppercase to the output file.
+                        writer.WriteLine(lineOfText.ToUpper());
                     }
                 }
             }
@@ -42,7 +48,8 @@ namespace Tutorial
             }
 
             // Tell the user what happened.
-            string message = $"Displayed {lineCount} lines of file {filePath}";
+            string message = $"Converted {lineCount} lines of file {filePath} " +
+                             $"to {convertedPath} on {DateTime.Now}";
             Console.WriteLine(message);
 
             /*
@@ -51,7 +58,7 @@ namespace Tutorial
             throughout history. If the file doesn't exist it will be created. If it already exists, its
             contents will be preserved, and the lines written here will be appended to what was already there.
              */
-            
+
         }
 
         /**

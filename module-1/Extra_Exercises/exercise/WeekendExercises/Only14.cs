@@ -10,7 +10,9 @@
         */
         public bool Only14(int[] nums)
         {
-            return false;
+
+            
+            return true;
         }
     }
 }

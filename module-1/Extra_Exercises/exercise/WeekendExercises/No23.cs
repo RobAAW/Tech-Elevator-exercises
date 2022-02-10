@@ -10,7 +10,17 @@
         */
         public bool No23(int[] nums)
         {
-            return false;
+            bool zeroTwo = nums[0] == 2 ? true : false;
+            bool zeroThree = nums[0] == 3 ? true : false;
+            bool oneTwo = nums[1] == 2 ? true : false;
+            bool oneThree = nums[1] == 3 ? true : false;
+
+            if ((zeroTwo == true || zeroThree == true) || (oneTwo == true || oneThree == true))
+            {
+                return false;
+            }
+            
+            return true;
         }
     }
 }
