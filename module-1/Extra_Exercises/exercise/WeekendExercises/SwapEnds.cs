@@ -19,10 +19,12 @@
             {
                 return swapIt;
             }
-            else
+            else if (nums.Length)
+            {
+
+            }
             
-            swapIt[0] = nums[nums.Length - 1];
-            swapIt[swapIt.Length - 1] = nums[0];
+            
 
 
             return swapIt;
