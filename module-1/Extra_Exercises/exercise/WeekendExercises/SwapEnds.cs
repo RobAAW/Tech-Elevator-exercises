@@ -21,8 +21,7 @@
             }
             else
             
-            swapIt[0] = nums[nums.Length - 1];
-            swapIt[swapIt.Length - 1] = nums[0];
+            
 
 
             return swapIt;
