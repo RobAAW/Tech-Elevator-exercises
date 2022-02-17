@@ -19,7 +19,10 @@
             {
                 return swapIt;
             }
-            else
+            else if (nums.Length)
+            {
+
+            }
             
             
 
