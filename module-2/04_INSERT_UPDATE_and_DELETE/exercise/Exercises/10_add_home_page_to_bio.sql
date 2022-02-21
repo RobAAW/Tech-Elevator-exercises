@@ -5,8 +5,10 @@ SELECT *
 FROM person
 WHERE home_page IS NOT NULL;
 
-BEGIN TRANSACTION;
+
 UPDATE person
 SET biography = biography + ' ' + home_page
-WHERE home_page IS NOT NULL;
-ROLLBACK;
+WHERE home_page IS NOT NULL
+AND
+birthday < '1950/01/01';
+

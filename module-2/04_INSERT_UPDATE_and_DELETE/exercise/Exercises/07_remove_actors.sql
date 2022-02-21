@@ -8,10 +8,10 @@ WHERE (movie_id = (SELECT movie_id FROM movie WHERE title = 'Avengers: Infinity 
 SELECT *
 FROM movie_actor;
 
-BEGIN TRANSACTION;
+
 DELETE FROM movie_actor
-WHERE actor_id IN (SELECT movie_id FROM movie WHERE title = 'Avengers: Infinity War');
-ROLLBACK;
+WHERE actor_id = (SELECT actor_id FROM movie WHERE title = 'Avengers: Infinity War');
+
 
 
 

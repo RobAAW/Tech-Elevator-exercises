@@ -10,11 +10,10 @@ FROM movie
 WHERE title LIKE 'Me%';
 
 
-BEGIN TRANSACTION;
+
 DELETE FROM movie_actor
 WHERE movie_id = (SELECT movie_id FROM movie WHERE title = 'Memento')
 DELETE FROM movie_genre
 WHERE movie_id = (SELECT movie_id FROM movie WHERE title = 'Memento')
 DELETE FROM movie
-WHERE movie_id = (SELECT title FROM movie WHERE title = 'Memento')
-COMMIT;
+WHERE title = 'Memento';
