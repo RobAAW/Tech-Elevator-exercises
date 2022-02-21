@@ -10,7 +10,7 @@ FROM movie_actor;
 
 
 DELETE FROM movie_actor
-WHERE actor_id = (SELECT actor_id FROM movie WHERE title = 'Avengers: Infinity War');
+WHERE movie_id = (SELECT movie_id FROM movie WHERE title = 'Avengers: Infinity War');
 
 
 

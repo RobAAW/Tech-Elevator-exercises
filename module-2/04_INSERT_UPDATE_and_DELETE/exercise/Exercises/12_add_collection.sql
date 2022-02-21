@@ -12,6 +12,6 @@ FROM movie_actor
 WHERE actor_id = (SELECT person_id FROM person WHERE person_name = 'Bill Murray');
 
 UPDATE movie
-SET collection_id = (SELECT collection_id FROM collection WHERE collection_name = 'Bill Murray Collection'
-WHERE 
+SET collection_id = (SELECT collection_id FROM collection WHERE collection_name = 'Bill Murray Collection')
+WHERE movie_id IN (SELECT movie_id FROM movie_actor WHERE actor_id = (SELECT person_id FROM person WHERE person_name = 'Bill Murray'));
 
