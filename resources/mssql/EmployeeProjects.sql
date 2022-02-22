@@ -1,16 +1,20 @@
-﻿USE [master];
+﻿-- Switch to the system (aka master) database
+USE master;
 GO
 
+-- Delete the EmployeeProjects database if it exists
 IF DB_ID('EmployeeProjects') IS NOT NULL
 BEGIN
-	ALTER DATABASE [EmployeeProjects] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-	DROP DATABASE [EmployeeProjects];
+	ALTER DATABASE EmployeeProjects SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE EmployeeProjects;
 END
 
-CREATE DATABASE [EmployeeProjects];
+-- Create a new EmployeeProjects database
+CREATE DATABASE EmployeeProjects;
 GO
 
-USE [EmployeeProjects];
+-- Switch to the EmployeeProjects database
+USE EmployeeProjects;
 GO
 
 BEGIN TRANSACTION;
@@ -61,21 +65,55 @@ CREATE TABLE timesheet (
     CONSTRAINT FK_timesheet_project FOREIGN KEY (project_id) REFERENCES project(project_id)
 );
 
-INSERT INTO department (name)
-VALUES ('Department 1'), -- department_id will be 1
-       ('Department 2'); -- department_id will be 2
+-- Fill department and project before employee or project_employee because they have no foreign key dependencies
+INSERT INTO department (name) VALUES ('Department of Redundancy');
+INSERT INTO department (name) VALUES ('Network Administration');
+INSERT INTO department (name) VALUES ('Research and Development');
+INSERT INTO department (name) VALUES ('Store Support');
 
-INSERT INTO project (name, from_date, to_date)
-VALUES ('Project 1', '2000-01-02', '2000-12-31'), -- project_id will be 1
-       ('Project 2', '2001-01-02', '2001-12-31'); -- project_id will be 2
+INSERT INTO project (name, from_date, to_date) VALUES ('Project X', '1961-03-01', '2002-08-31');
+INSERT INTO project (name, from_date, to_date) VALUES ('Forlorn Cupcake', '2021-04-15', '2021-07-10');
+INSERT INTO project (name, from_date, to_date) VALUES ('The Never-ending Project', '2010-09-01', '2038-01-19');
+INSERT INTO project (name, from_date, to_date) VALUES ('Absolutely Done By', '07-21-2019', '2020-06-30');
+INSERT INTO project (name, from_date, to_date) VALUES ('Royal Shakespeare', '2015-10-15', '2016-03-14');
+INSERT INTO project (name, from_date, to_date) VALUES ('Plan 9', '2014-10-01', '2020-12-31');
 
 INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
-VALUES (1, 'First1', 'Last1', '1981-01-01', '2001-01-02'), -- employee_id will be 1
-       (2, 'First2', 'Last2', '1982-02-01', '2002-02-03'), -- employee_id will be 2
-       (1, 'First3', 'Last3', '1983-03-01', '2003-03-04'); -- employee_id will be 3
+VALUES (1, 'Fredrick', 'Keppard', '1953-07-15', '2001-04-01');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (1, 'Flo', 'Henderson', '1990-12-28', '2011-08-01');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (2, 'Franklin', 'Trumbauer', '1980-07-14', '1998-09-01');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (2, 'Delora', 'Coty', '1976-07-04', '2009-03-01');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (2, 'Sid', 'Goodman', '1972-06-04', '1998-09-01');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (3, 'Mary Lou', 'Wolinski', '1983-04-08', '2012-04-01');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (3, 'Jammie', 'Mohl', '1987-11-11', '2013-02-16');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (3, 'Neville', 'Zellers', '1983-04-04', '2013-07-01');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (3, 'Meg', 'Buskirk', '1987-05-13', '2007-11-01');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (3, 'Matthew', 'Duford', '1968-04-05', '2016-02-16');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (4, 'Jarred', 'Lukach', '1981-09-25', '2003-05-01');
+INSERT INTO employee (department_id, first_name, last_name, birth_date, hire_date)
+VALUES (4, 'Gabreila', 'Christie', '1980-03-17', '1999-08-01');
 
-INSERT INTO project_employee (project_id, employee_id)
-VALUES (1, 1),
-       (2, 2), (2, 3); -- Don't assign Employee #4 to any project
+INSERT INTO project_employee (project_id, employee_id) VALUES (1, 3);
+INSERT INTO project_employee (project_id, employee_id) VALUES (1, 5);
+INSERT INTO project_employee (project_id, employee_id) VALUES (3, 1);
+INSERT INTO project_employee (project_id, employee_id) VALUES (3, 5);
+INSERT INTO project_employee (project_id, employee_id) VALUES (3, 7);
+INSERT INTO project_employee (project_id, employee_id) VALUES (4, 2);
+INSERT INTO project_employee (project_id, employee_id) VALUES (4, 6);
+INSERT INTO project_employee (project_id, employee_id) VALUES (5, 8);
+INSERT INTO project_employee (project_id, employee_id) VALUES (5, 9);
+INSERT INTO project_employee (project_id, employee_id) VALUES (6, 5);
+INSERT INTO project_employee (project_id, employee_id) VALUES (6, 10);
+INSERT INTO project_employee (project_id, employee_id) VALUES (6, 11);
 
 COMMIT TRANSACTION;
