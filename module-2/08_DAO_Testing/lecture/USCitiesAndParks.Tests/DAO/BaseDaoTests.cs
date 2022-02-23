@@ -6,7 +6,7 @@ using System.Transactions;
 
 namespace USCitiesAndParks.Tests
 {
-    [TestClass]
+    [TestClass]  
     public class BaseDaoTests
     {
         private const string DatabaseName = "UnitedStatesTesting";
@@ -19,7 +19,7 @@ namespace USCitiesAndParks.Tests
         /// </summary>
         private TransactionScope transaction;
 
-        [AssemblyInitialize]
+        [AssemblyInitialize]  //run before each individual test/before class starts at all
         public static void BeforeAllTests(TestContext context)
         {
             string sql = File.ReadAllText("create-test-db.sql").Replace("test_db_name", DatabaseName);
@@ -41,7 +41,7 @@ namespace USCitiesAndParks.Tests
             }
         }
 
-        [AssemblyCleanup]
+        [AssemblyCleanup]  //run after each individual test
         public static void AfterAllTests()
         {
             // drop the temporary database
@@ -56,7 +56,7 @@ namespace USCitiesAndParks.Tests
         }
 
 
-        [TestInitialize]
+        [TestInitialize] //before each method
         public virtual void Setup()
         {
             // Begin the transaction
@@ -64,7 +64,7 @@ namespace USCitiesAndParks.Tests
 
         }
 
-        [TestCleanup]
+        [TestCleanup] //after each method
         public void Cleanup()
         {
             // Roll back the transaction
