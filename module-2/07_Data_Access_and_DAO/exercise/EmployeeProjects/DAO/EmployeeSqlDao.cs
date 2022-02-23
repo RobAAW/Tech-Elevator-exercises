@@ -90,7 +90,7 @@ namespace EmployeeProjects.DAO
         {
             Employee employee = new Employee();
             employee.EmployeeId = Convert.ToInt32(reader["employee_id"]);
-            employee.DepartmentId = Convert.ToInt32(reader["department_id"]);
+            //employee.DepartmentId = Convert.ToInt32(reader["department_id"]);
             employee.FirstName = Convert.ToString(reader["first_name"]);
             employee.LastName = Convert.ToString(reader["last_name"]);
             employee.BirthDate = Convert.ToDateTime(reader["birth_date"]);
