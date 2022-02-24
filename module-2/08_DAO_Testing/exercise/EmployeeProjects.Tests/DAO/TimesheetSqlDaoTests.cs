@@ -16,6 +16,8 @@ namespace EmployeeProjects.Tests.DAO
 
         private TimesheetSqlDao dao;
 
+        private Timesheet testTimesheet;
+
 
         [TestInitialize]
         public override void Setup()
@@ -27,19 +29,32 @@ namespace EmployeeProjects.Tests.DAO
         [TestMethod]
         public void GetTimesheet_ReturnsCorrectTimesheetForId()
         {
-            Assert.Fail();
+            Timesheet timesheet = dao.GetTimesheet(1);
+            AssertTimesheetsMatch(TIMESHEET_1, timesheet);
+
+            timesheet = dao.GetTimesheet(2);
+            AssertTimesheetsMatch(TIMESHEET_2, timesheet);
         }
 
         [TestMethod]
         public void GetTimesheet_ReturnsNullWhenIdNotFound()
         {
-            Assert.Fail();
+            Timesheet timesheet = dao.GetTimesheet(99);
+            Assert.IsNull(timesheet);
         }
 
         [TestMethod]
         public void GetTimesheetsByEmployeeId_ReturnsListOfAllTimesheetsForEmployee()
         {
-            Assert.Fail();
+            IList<Timesheet> timesheets = dao.GetTimesheetsByEmployeeId(1);
+            Assert.AreEqual(2, timesheets.Count);
+            AssertTimesheetsMatch(TIMESHEET_1, timesheets[0]);
+            AssertTimesheetsMatch(TIMESHEET_2, timesheets[1]);
+
+            timesheets = dao.GetTimesheetsByEmployeeId(2);
+            Assert.AreEqual(2, timesheets.Count);
+            AssertTimesheetsMatch(TIMESHEET_3, timesheets[0]);
+            AssertTimesheetsMatch(TIMESHEET_4, timesheets[1]);
         }
 
         [TestMethod]
@@ -51,25 +66,50 @@ namespace EmployeeProjects.Tests.DAO
         [TestMethod]
         public void CreateTimesheet_ReturnsTimesheetWithIdAndExpectedValues()
         {
-            Assert.Fail();
+            Timesheet createdTimesheet = dao.CreateTimesheet(testTimesheet);
+
+            int newId = createdTimesheet.TimesheetId;
+            Assert.IsTrue(newId > 0);
+
+            testTimesheet.TimesheetId = newId;
+            AssertTimesheetsMatch(testTimesheet, createdTimesheet);
         }
 
         [TestMethod]
         public void CreatedTimesheetHasExpectedValuesWhenRetrieved()
         {
-            Assert.Fail();
+            Timesheet createdTimesheet = dao.CreateTimesheet(testTimesheet);
+
+            int newId = createdTimesheet.TimesheetId;
+            Timesheet retrievedTimesheet = dao.GetTimesheet(newId);
+
+            AssertTimesheetsMatch(createdTimesheet, retrievedTimesheet);
         }
 
         [TestMethod]
         public void UpdatedTimesheetHasExpectedValuesWhenRetrieved()
         {
-            Assert.Fail();
+            Timesheet tsToUpdate = dao.GetTimesheet(1);
+
+            tsToUpdate.Description = "TS1";
+
+            dao.UpdateTimesheet(tsToUpdate);
+
+            Timesheet retrievedTS = dao.GetTimesheet(1);
+            AssertTimesheetsMatch(tsToUpdate, retrievedTS);
         }
 
         [TestMethod]
         public void DeletedTimesheetCantBeRetrieved()
         {
-            Assert.Fail();
+            dao.DeleteTimesheet(4);
+
+            Timesheet retrievedTs = dao.GetTimesheet(4);
+            Assert.IsNull(retrievedTs);
+
+            IList<Timesheet> timesheets = dao.GetTimesheetsByEmployeeId(2);
+            Assert.AreEqual(1, timesheets.Count);
+            AssertTimesheetsMatch(TIMESHEET_3, timesheets[0]);
         }
 
         [TestMethod]
