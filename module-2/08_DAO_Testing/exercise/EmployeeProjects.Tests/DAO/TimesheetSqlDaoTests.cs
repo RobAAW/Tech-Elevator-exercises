@@ -14,14 +14,15 @@ namespace EmployeeProjects.Tests.DAO
         private static readonly Timesheet TIMESHEET_3 = new Timesheet(3, 2, 1, DateTime.Parse("2021-01-01"), 0.25M, true, "Timesheet 3");
         private static readonly Timesheet TIMESHEET_4 = new Timesheet(4, 2, 2, DateTime.Parse("2021-02-01"), 2.0M, false, "Timesheet 4");
 
-        private TimesheetSqlDao dao;
-
         private Timesheet testTimesheet;
 
+        private TimesheetSqlDao dao;
 
+    
         [TestInitialize]
         public override void Setup()
         {
+            testTimesheet = new Timesheet(5,2,2, DateTime.Parse("2021-03-01"), 3.5M, true, "Timesheet 5");
             dao = new TimesheetSqlDao(ConnectionString);
             base.Setup();
         }
@@ -60,7 +61,16 @@ namespace EmployeeProjects.Tests.DAO
         [TestMethod]
         public void GetTimesheetsByProjectId_ReturnsListOfAllTimesheetsForProject()
         {
-            Assert.Fail();
+            IList<Timesheet> timesheets = dao.GetTimesheetsByProjectId(1);
+            Assert.AreEqual(3, timesheets.Count);
+            AssertTimesheetsMatch(TIMESHEET_1, timesheets[0]);
+            AssertTimesheetsMatch(TIMESHEET_2, timesheets[1]);
+            AssertTimesheetsMatch(TIMESHEET_3, timesheets[2]);
+
+            timesheets = dao.GetTimesheetsByProjectId(2);
+            Assert.AreEqual(1, timesheets.Count);
+            AssertTimesheetsMatch(TIMESHEET_4, timesheets[0]);
+
         }
 
         [TestMethod]
@@ -115,7 +125,10 @@ namespace EmployeeProjects.Tests.DAO
         [TestMethod]
         public void GetBillableHours_ReturnsCorrectTotal()
         {
-            Assert.Fail();
+            decimal billableHours = 2.5M;
+            decimal actual = dao.GetBillableHours(1, 1);
+
+            Assert.AreEqual(billableHours, actual);
         }
 
         private void AssertTimesheetsMatch(Timesheet expected, Timesheet actual)

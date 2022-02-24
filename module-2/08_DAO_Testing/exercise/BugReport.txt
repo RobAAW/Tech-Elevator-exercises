@@ -1,35 +1,36 @@
 Bug 1
 -----
 Test that demonstrates problem:
-
+GetTimesheetsByEmployeeId
 Expected output:
-
+Assert.AreEqual failed. Expected 2 
 Actual output:
-
+actual 1
 How did you fix this bug?
-
+Changed line 56 to while loop instead of if statement
 
 Bug 2
 -----
 Test that demonstrates problem:
-
+GetTimesheetsByProjectId
 Expected output:
-
+Expected 3
 Actual output:
-
+Actual 1
 How did you fix this bug?
-
+Changed line to "WHERE project_id = @project_id " 
 
 Bug 3
 -----
 Test that demonstrates problem:
-
+CreateTimesheet_ReturnsTimesheetWithIdAndExpectedValues
 Expected output:
-
+new Timesheet
 Actual output:
-
+System.Null
 How did you fix this bug?
-
+Created variable private Timesheet testTimesheet
+Instantiated as  testTimesheet = new Timesheet(5,2,2, DateTime.Parse("2021-03-01"), 3.5M, true, "Timesheet 5");
 
 Bug 4
 -----
