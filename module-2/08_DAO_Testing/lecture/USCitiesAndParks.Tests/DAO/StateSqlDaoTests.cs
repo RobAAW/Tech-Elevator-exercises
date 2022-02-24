@@ -25,7 +25,7 @@ namespace USCitiesAndParks.Tests
         public void GetState_ReturnsCorrectStateForAbbreviation()
         {
             State state = dao.GetState("AA");
-            AssertStatesMatch(STATE_A, state);
+            AssertStatesMatch(STATE_A, state); //expected vs actual
 
             state = dao.GetState("BB");
             AssertStatesMatch(STATE_B, state);

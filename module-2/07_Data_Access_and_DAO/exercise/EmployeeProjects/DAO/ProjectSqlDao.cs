@@ -81,7 +81,7 @@ namespace EmployeeProjects.DAO
             {
                 conn.Open();
 
-                // must delete records in park_state first
+                // must delete other records first
                 SqlCommand cmd = new SqlCommand("DELETE FROM project_employee WHERE project_id = @project_id;" +
                                                 "DELETE FROM timesheet WHERE project_id = @project_id;" +
                                                 "DELETE FROM project WHERE project_id = @project_id;", conn);
