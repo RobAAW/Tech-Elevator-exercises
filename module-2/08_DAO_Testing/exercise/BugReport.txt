@@ -23,14 +23,14 @@ Changed line to "WHERE project_id = @project_id "
 Bug 3
 -----
 Test that demonstrates problem:
-CreateTimesheet_ReturnsTimesheetWithIdAndExpectedValues
+UpdatedTimesheetHasExpectedValuesWhenRetrieved()
 Expected output:
-new Timesheet
+false
 Actual output:
-System.Null
+true
 How did you fix this bug?
-Created variable private Timesheet testTimesheet
-Instantiated as  testTimesheet = new Timesheet(5,2,2, DateTime.Parse("2021-03-01"), 3.5M, true, "Timesheet 5");
+Changed/added to line 121 to 'is_billable = @is_billable' in the SQL command.
+
 
 Bug 4
 -----
@@ -41,4 +41,4 @@ Expected output:
 Actual output:
 
 How did you fix this bug?
-
+Changed/added to line 

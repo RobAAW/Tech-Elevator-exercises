@@ -118,7 +118,7 @@ namespace EmployeeProjects.DAO
 
                 SqlCommand cmd = new SqlCommand("UPDATE timesheet " +
                                                 "SET employee_id = @employee_id, project_id = @project_id, date_worked = @date_worked, " +
-                                                "hours_worked = @hours_worked, description = @description " +
+                                                "hours_worked = @hours_worked, is_billable = @is_billable, description = @description " +
                                                 "WHERE timesheet_id = @timesheet_id;", conn);
                 cmd.Parameters.AddWithValue("@employee_id", updatedTimesheet.EmployeeId);
                 cmd.Parameters.AddWithValue("@project_id", updatedTimesheet.ProjectId);
