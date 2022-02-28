@@ -20,22 +20,50 @@ namespace HotelApp.Services
 
         public List<Hotel> GetHotels()
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest("hotels");
+            IRestResponse<List<Hotel>> response = client.Get<List<Hotel>>(request);
+
+            if(!response.IsSuccessful)
+            {
+                throw new HttpRequestException("Error in call to server");
+            }
+            return response.Data;
         }
 
         public List<Review> GetReviews()
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest("reviews");
+            IRestResponse<List<Review>> response = client.Get<List<Review>>(request);
+
+            if (!response.IsSuccessful)
+            {
+                throw new HttpRequestException("Error in call to server");
+            }
+            return response.Data;
         }
 
         public Hotel GetHotel(int hotelId)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest($"hotels/{hotelId}");
+            IRestResponse<Hotel> response = client.Get<Hotel>(request);
+
+            if (!response.IsSuccessful)
+            {
+                throw new HttpRequestException("Error in call to server");
+            }
+            return response.Data;
         }
 
         public List<Review> GetHotelReviews(int hotelId)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest($"hotels/{hotelId}/reviews");
+            IRestResponse<List<Review>> response = client.Get<List<Review>>(request);
+
+            if (!response.IsSuccessful)
+            {
+                throw new HttpRequestException("Error in call to server");
+            }
+            return response.Data;
         }
 
         public List<Hotel> GetHotelsWithRating(int starRating)
