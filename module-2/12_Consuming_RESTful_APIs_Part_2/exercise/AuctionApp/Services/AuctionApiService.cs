@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using AuctionApp.Models;
 using System.Net.Http;
+using System;
 
 namespace AuctionApp.Services
 {
@@ -76,17 +77,58 @@ namespace AuctionApp.Services
 
         public Auction AddAuction(Auction newAuction)
         {
-            throw new System.NotImplementedException();
+            RestRequest request = new RestRequest("auctions");
+            request.AddJsonBody(newAuction);
+            IRestResponse<Auction> response = client.Post<Auction>(request);
+
+            CheckForError(response, "Add auction");
+            return response.Data;
         }
 
         public Auction UpdateAuction(Auction auctionToUpdate)
         {
-            throw new System.NotImplementedException();
+            RestRequest request = new RestRequest($"auctions/{auctionToUpdate.Id}");
+            request.AddJsonBody(auctionToUpdate);
+            IRestResponse<Auction> response = client.Put<Auction>(request);
+            CheckForError(response, $"Update auction {auctionToUpdate.Id}");
+            
+            return response.Data;
         }
 
         public bool DeleteAuction(int auctionId)
         {
-            throw new System.NotImplementedException();
+            RestRequest request = new RestRequest($"auctions/{auctionId}");
+            IRestResponse response = client.Delete(request);
+            CheckForError(response, $"Delete auction {auctionId}");
+            
+            return true;
+        }
+
+        private void CheckForError(IRestResponse response, string action)
+        {
+            string message = "";
+            string messageDetails = "";
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                message = $"Error occurred in '{action}' - unable to reach server.";
+                messageDetails = $"Action: {action}\n" +
+                    $"\tResponse status was '{response.ResponseStatus}'.";
+                if (response.ErrorException != null)
+                {
+                    messageDetails += $"\n\t{response.ErrorException.Message}";
+                }
+            }
+            else if (!response.IsSuccessful)
+            {
+                message = $"An http error occurred.";
+                messageDetails = $"Action: {action}\n" +
+                    $"\tResponse: {(int)response.StatusCode} {response.StatusDescription}";
+            }
+            if (message.Length > 0)
+            {
+                
+                throw new HttpRequestException(message, response.ErrorException);
+            }
         }
     }
 }
