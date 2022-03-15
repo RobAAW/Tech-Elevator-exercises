@@ -1,0 +1,47 @@
+html {
+    color: cornsilk;
+}
+
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color:  slategray;
+  }
+
+  img {
+    width: 350px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  html {
+      height: 100%;
+  }
+  h2 {
+      text-decoration: underline;
+      text-align: center;
+  }
+
+  header {
+      text-align: center;
+  }
+
+  table > thead {
+      text-decoration: underline;
+  }
+
+  table {
+      text-align: justify;
+      border-collapse: separate;
+      border-spacing: 30px;
+      margin: auto;
+  }
+
+  blockquote {
+      font-style: italic;    
+  }
+
+
+
+
