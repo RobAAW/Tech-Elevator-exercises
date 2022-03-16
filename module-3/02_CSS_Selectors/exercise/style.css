@@ -56,7 +56,7 @@ nav>ul>li>a {
   text-decoration: none;
 }
 
-#a1 {
+nav>ul>:first-child {
   text-decoration: underline;
 }
 
