@@ -1,11 +1,13 @@
 body {
   margin: 20px;
-  padding: 0
+  padding: 0;
 }
 
 header {
   background-color: #F0F0F0;
   padding: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 .logo {
@@ -16,6 +18,9 @@ ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 li {
@@ -31,6 +36,7 @@ a,
 a:visited {
   color: #707070;
   text-decoration: none;
+  flex-grow: 0;
 }
 
 a:hover {
@@ -38,6 +44,10 @@ a:hover {
   text-decoration: underline;
 }
 
-.my-account img {
-  width: 40px;
+nav {
+  flex-grow: 0;
+}
+
+.spacer {
+  flex-grow: 1;
 }
