@@ -137,6 +137,18 @@ let
  * It must work for strings and numbers.
  */
 
+function findLargest (eleArray)
+{
+    let placeHolder = eleArray[0];
+    eleArray.forEach( (element) => {
+        if (element > placeHolder)
+        {
+            placeHolder = element;
+        }
+    });
+    return placeHolder;
+}
+
 
 /*
  * CHALLENGE
@@ -155,13 +167,4 @@ let
  *
  * Read the tests to verify you have the correct behavior.
  */
-function findLargest() 
-{
-
-}
-let nameParts = ['bosco', 'p.', 'soultrain'];
-
-let fullName = nameParts.reduce( (reducer, part) => {
-    return reducer + ' ' + part.substring(0, 1).toLocaleUpperCase() + part.substring(1);
-},0); // <--- The empty quotes is the value of the reducer for the first element
 
