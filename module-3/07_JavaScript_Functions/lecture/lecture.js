@@ -27,6 +27,10 @@ function printToConsole(value) {
  * @param {number} firstParameter the first parameter to multiply
  * @param {number} secondParameter the second parameter to multiply
  */
+function multiplyTogether(a, b)
+{
+  return a * b;
+}
 
 /**
  * This version makes sure that no parameters are ever missing. If
@@ -38,6 +42,10 @@ function printToConsole(value) {
  * @param {number} [firstParameter=0] the first parameter to multiply
  * @param {number} [secondParameter=0] the second parameter to multiply
  */
+function multiplyNoUndefined(firstParameter = 0, secondParameter = 0)
+{
+  return firstParameter * secondParameter;
+}
 
 
  
@@ -86,7 +94,14 @@ function scopeTest() {
     console.log("This won't print!");
   }
 }
-
+/**
+ * Take the details of a person and print them out
+ * @param {*} name 
+ * @param {*} age 
+ * @param {*} listOfQuirks 
+ * @param {*} separator 
+ * @returns 
+ */
 function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') {
   let description = `${name} is currently ${age} years old. Their quirks are: `;
   return description + listOfQuirks.join(separator);
@@ -100,7 +115,9 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
  * @returns {number} sum of all the numbers
  */
 function sumAllNumbers(numbersToSum) {
-  return numbersToSum.reduce();
+  return numbersToSum.reduce( (reducer, num) => {
+    return reducer += num;
+  }, 0);
 }
 
 /**
@@ -111,4 +128,36 @@ function sumAllNumbers(numbersToSum) {
  * @returns {number[]} a new array with only those numbers that are
  *   multiples of 3
  */
-function allDivisibleByThree(numbersToFilter) {}
+function allDivisibleByThree(numbersToFilter) {
+  let multiplesOfThree = [];
+  numbersToFilter.forEach((item) => {
+    if (item % 3 === 0)
+    {
+      multiplesOfThree.push(item);
+    }
+  })
+  return multiplesOfThree;
+}
+
+function allDivisibleByThree (numbersToFilter)
+		{
+			let threeArray = numbersToFilter.filter( (threes) => {
+				return threes % 3 === 0;
+			});
+			return threeArray;
+		}
+
+
+function sumAllNumbersWithParameters(numbersToSum) {
+  return numbersToSum.reduce(addNumber);
+}
+
+function addNumber(sum, number)
+{
+  return sum + number;
+}
+
+function sumAllNumbersWithParameters(numbersToSum, reduceFx) 
+{
+  return numbersToSum.reduce(reduceFx);
+}

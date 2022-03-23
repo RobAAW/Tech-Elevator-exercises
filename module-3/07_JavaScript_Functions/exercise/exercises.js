@@ -20,6 +20,16 @@
  * @returns {boolean} true if they are admitted
  */
 
+function isAdmitted(gpa, satScore = 0, recommendation = false)
+{
+    if (gpa > 4 || satScore > 1300  || gpa > 3 && recommendation == true || satScore > 1200 && recommendation == true)
+    {
+        return true;
+    }
+    else
+    return false;
+}
+
 /**
  * Write a function called useParameterToFilterArray that takes an anonymous
  * function and uses that in the `unfilteredArray` filter function. Return the result.
@@ -44,6 +54,11 @@ function useParameterToFilterArray(fx)
  * @param {string} [second=''] the second string of digits to concatenate
  * @returns {number} the resultant number
  */
+function makeNumber(first, second = '')
+{
+    return newNumber = Number.parseInt(first + second);
+}
+
 
 /**
  * Write a function called addAll that takes an unknown number of parameters
@@ -52,12 +67,34 @@ function useParameterToFilterArray(fx)
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
+ function addAll() 
+ {
+     let sum = 0;
+    for (let i = 0; i < arguments.length; ++i) 
+    {
+        sum += arguments[i];
+    }
+    return sum;
+}
 
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+/**
+ * takes an array and prepends 'Happy ' to the beginning of all the
+ * words and returns them as a new array.
+ * @param {strArray} strArray array of words
+ * @returns newArray
+ */
+function makeHappy(strArray)
+{
+    let newArray = strArray.map( (word) => {
+    return 'Happy ' + word;
+});
+    return newArray;
+}
 
 /*
  * Write and document a function called getFullAddressesOfProperties
@@ -76,6 +113,22 @@ function useParameterToFilterArray(fx)
  *
  * Use `map` and an anonymous function.
  */
+let addressDetails = (addressObject) => {
+    let result = multiplicand * multiplier;
+
+    return result;
+}
+
+function getFullAddressesOfProperties (addressObject)
+{
+    let fullAddress = addressObject.map( (item) => 
+    {
+        return item.streetNumber + ' ' + item.streetName + ' ' + item.streetType + ' ' + item.city + ' ' + item.state + ' ' + item.zip;
+    });
+    return fullAddress;
+}
+
+let 
 
 /*
  * Write and document a function called findLargest.
@@ -83,6 +136,7 @@ function useParameterToFilterArray(fx)
  * Using `forEach`, find the largest element in an array.
  * It must work for strings and numbers.
  */
+
 
 /*
  * CHALLENGE
@@ -101,3 +155,13 @@ function useParameterToFilterArray(fx)
  *
  * Read the tests to verify you have the correct behavior.
  */
+function findLargest() 
+{
+
+}
+let nameParts = ['bosco', 'p.', 'soultrain'];
+
+let fullName = nameParts.reduce( (reducer, part) => {
+    return reducer + ' ' + part.substring(0, 1).toLocaleUpperCase() + part.substring(1);
+},0); // <--- The empty quotes is the value of the reducer for the first element
+
