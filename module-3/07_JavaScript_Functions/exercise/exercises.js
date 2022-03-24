@@ -128,8 +128,6 @@ function getFullAddressesOfProperties (addressObject)
     return fullAddress;
 }
 
-let 
-
 /*
  * Write and document a function called findLargest.
  *
