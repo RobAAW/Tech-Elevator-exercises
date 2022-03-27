@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const tasks = document.querySelectorAll('li');
 
   tasks.forEach((task) => {
-    // when you click on a task mark it completed
+    // when you click on a task class/mark it completed
     task.addEventListener('click', () => {
       if (!task.classList.contains('completed')) {
         task.classList.add('completed');
@@ -56,6 +56,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // when you double click a task remove complete class
+    // and class/mark incomplete
+    task.addEventListener('dblclick', () => {
+      if (task.classList.contains('completed')) {
+        task.classList.remove('completed');
+        task.querySelector('i').classList.remove('completed');
+        task.classList.add('incomplete');
+        task.querySelector('i').classList.add('incomplete');
+      }
+    });
+
+    // mark all tasks as completed when button selected
+    // text switches to "Mark All Incomplete"
+    // clicking again marks all incomplete 
+  const allComplete = document.getElementById('toggleAll');
+  
+
+  allComplete.addEventListener('click', () => {
+      tasks.forEach((task) => {
+      task.classList.add('completed');
+      task.querySelector('i').classList.add('completed');
+    });
+    allComplete.innerText = 'Mark All Incomplete';
   });
+  
 
   });
+});
+
