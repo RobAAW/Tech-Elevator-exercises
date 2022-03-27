@@ -36,3 +36,26 @@ function displayGroceries() {
     ul.appendChild(li);
   });
 }
+
+/*
+ * When the DOM is fully loaded into a browser, the browser itself will trigger an event called
+ * DOMContentLoaded on the document object. */
+
+document.addEventListener('DOMContentLoaded', () => {
+  setPageTitle();
+  displayGroceries();
+
+  const tasks = document.querySelectorAll('li');
+
+  tasks.forEach((task) => {
+    // when you click on a task mark it completed
+    task.addEventListener('click', () => {
+      if (!task.classList.contains('completed')) {
+        task.classList.add('completed');
+        task.querySelector('i').classList.add('completed');
+      }
+    });
+
+  });
+
+  });

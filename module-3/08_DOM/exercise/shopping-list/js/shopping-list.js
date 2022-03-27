@@ -31,16 +31,11 @@ function displayGroceries() {
  */
 function markCompleted() {
 
-  let allGroceries = document.querySelectorAll('groceries');
+  const allGroceries = document.querySelectorAll('li');
 
-  for (let i = 0; i < allGroceries.length; i++) {
-
-    allGroceries.classList[i].add('completed');
-
-  }
-
-  
-
+  allGroceries.forEach((item) => {
+    item.classList.add('completed');
+  });
 }
 
 setPageTitle();
